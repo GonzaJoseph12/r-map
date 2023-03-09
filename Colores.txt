@@ -1,0 +1,30 @@
+--green-light		|	C5DFA1	const Color.fromRGBO(197, 223, 161, 1),
+
+--blue-dark		|	1B2D43	const Color.fromRGBO(27, 45, 67, 1),
+
+--background		|	E4EFED 
+
+--yellow-light		|	F0E9B1
+
+--text-color-inactive	|	5E5E5E
+
+--green-dark		|	3A5A0D	const Color.fromRGBO(58, 90, 13, 1),
+
+--inactive		|	9A9A9A  const Color.fromRGBO(154, 154, 154, 1),
+
+--main-text		|	454545
+
+--secondary-green	|	D9E5C6	
+
+--black			|	000000
+
+--white			|	EEEEEE  const Color.fromRGBO(255, 255, 255, 1),
+
+				878787	const Color.fromRGBO(135, 135, 135, 1),
+
+input
+
+fondo input 		|	#EFEFF0	const Color.fromRGBO(239, 239, 234, 1),
+Border input 		|	D9DBD6	const Color.fromRGBO(217, 219, 214, 1),
+
+fondo boton		|	#e3efed	const Color.fromRGBO(227, 239, 237, 1),
