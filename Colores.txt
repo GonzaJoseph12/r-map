@@ -14,7 +14,7 @@
 
 --main-text		|	454545
 
---secondary-green	|	D9E5C6	
+--secondary-green	|	D9E5C6	const Color.fromRGBO(217, 229, 198, 1)
 
 --black			|	000000
 
