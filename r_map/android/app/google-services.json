@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "793441572452",
+    "project_id": "rmap-56806",
+    "storage_bucket": "rmap-56806.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793441572452:android:78c00c800f4572ecdd7171",
+        "android_client_info": {
+          "package_name": "Robin.Do"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793441572452-j1iusimj4rseb1n65k5qn6agr0ap1rj1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1y6ZuEBOsirIgR91G7OSNZUbhDpZzl4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793441572452-j1iusimj4rseb1n65k5qn6agr0ap1rj1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "793441572452-nlbjp02va6mri0eoc705gm8incvs41am.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rMap"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793441572452:android:878fa927c73df64fdd7171",
+        "android_client_info": {
+          "package_name": "com.example.r_map"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793441572452-j1iusimj4rseb1n65k5qn6agr0ap1rj1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1y6ZuEBOsirIgR91G7OSNZUbhDpZzl4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793441572452-j1iusimj4rseb1n65k5qn6agr0ap1rj1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "793441572452-nlbjp02va6mri0eoc705gm8incvs41am.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rMap"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

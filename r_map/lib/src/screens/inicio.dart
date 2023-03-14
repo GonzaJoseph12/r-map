@@ -25,7 +25,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             children: <Widget>[
               Positioned(
                 child: Column(
-                  children: <Widget>[
+                  children: <Widget>[ 
                     Card(
                       color: const Color.fromRGBO(255, 255, 255, 1),
                       elevation: 3,
