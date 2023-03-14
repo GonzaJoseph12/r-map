@@ -20,8 +20,8 @@ class _RegistroState extends State<Registro> {
     return Scaffold(
       body: Container(
         color: const Color.fromRGBO(217, 229, 198, 1),
-        height: 800,
-        width: 375,
+        height: double.infinity,
+        width: double.infinity,
         child: Stack(
           // alignment: AlignmentDirectional.center,
           children: <Widget>[
