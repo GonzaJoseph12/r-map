@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 bool _loading = false;
 
-class Registro extends StatefulWidget {
-  const Registro({super.key});
+class ReestablecerContrasena extends StatefulWidget {
+  const ReestablecerContrasena({super.key});
   @override
-  State<Registro> createState() => _RegistroState();
+  State<ReestablecerContrasena> createState() => _ReestablecerContrasenaState();
 }
 
-class _RegistroState extends State<Registro> {
+class _ReestablecerContrasenaState extends State<ReestablecerContrasena> {
   final GlobalKey<FormState> _formKey2 = GlobalKey<FormState>();
-  bool _agree1 = false;
-  bool _agree2 = false;
+  bool _color = true;
+  bool _colorconfirm = true;
   bool _obscureText = true;
   String _password = '';
 
@@ -44,46 +44,27 @@ class _RegistroState extends State<Registro> {
                         borderRadius: BorderRadius.circular(10.0),
                         color: const Color.fromRGBO(255, 255, 255, 1),
                       ),
-                      margin: const EdgeInsets.only(top: 230),
+                      margin: const EdgeInsets.only(top: 210),
                       child: Padding(
                         padding: const EdgeInsets.only(
                             left: 35, right: 35, bottom: 20, top: 40),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
+                            const SizedBox(
+                              height: 10,
+                            ),
                             SizedBox(
                               width: 277,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  const Text(
-                                    'Usuario',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w500),
-                                  ),
-                                  const SizedBox(
-                                    height: 7,
-                                  ),
-                                  TextFormField(
-                                    decoration: InputDecoration(
-                                      hintText: 'Nombre de usuario',
-                                      fillColor: const Color.fromRGBO(
-                                          239, 239, 234, 1),
-                                      filled: true,
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(15),
-                                        borderSide: const BorderSide(
-                                            color: Color.fromRGBO(
-                                                217, 219, 214, 1),
-                                            width: 2.0),
-                                      ),
+                              child: Row(
+                                children: const <Widget>[
+                                  Text(
+                                    'Restablecimiento de contraseña',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromRGBO(27, 45, 67, 1),
                                     ),
-                                    validator: (val) {
-                                      if (val == null || val.isEmpty) {
-                                        return 'Campo vacío';
-                                      }
-                                      return null;
-                                    },
                                   ),
                                 ],
                               ),
@@ -97,64 +78,31 @@ class _RegistroState extends State<Registro> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   const Text(
-                                    'Correo electrónico',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w500),
+                                    'Ingresa tu nueva contraseña',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        color:
+                                            Color.fromRGBO(102, 110, 122, 1)),
                                   ),
                                   const SizedBox(
-                                    height: 7,
-                                  ),
-                                  TextFormField(
-                                    decoration: InputDecoration(
-                                      hintText: 'Correo electrónico',
-                                      fillColor: const Color.fromRGBO(
-                                          239, 239, 234, 1),
-                                      filled: true,
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(15),
-                                        borderSide: const BorderSide(
-                                            color: Color.fromRGBO(
-                                                217, 219, 214, 1),
-                                            width: 2.0),
-                                      ),
-                                    ),
-                                    validator: (val) {
-                                      if (val == null || val.isEmpty) {
-                                        return 'Campo vacío';
-                                      }
-                                      return null;
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            SizedBox(
-                              width: 277,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  const Text(
-                                    'Correo electrónico',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w500),
-                                  ),
-                                  const SizedBox(
-                                    height: 7,
+                                    height: 10,
                                   ),
                                   TextFormField(
                                     decoration: InputDecoration(
                                       suffixIcon: IconButton(
-                                        icon: const Icon(Icons.remove_red_eye),
+                                        icon: Icon(
+                                          Icons.check_circle,
+                                          color: _color
+                                              ? Colors.green
+                                              : Colors.red,
+                                        ),
                                         onPressed: () {
                                           setState(() {
                                             _obscureText = !_obscureText;
                                           });
                                         },
                                       ),
-                                      hintText: 'Contraseña',
+                                      hintText: 'Nueva contraseña',
                                       fillColor: const Color.fromRGBO(
                                           239, 239, 234, 1),
                                       filled: true,
@@ -176,72 +124,84 @@ class _RegistroState extends State<Registro> {
                                     },
                                     onSaved: (val) => _password = val!,
                                     obscureText: _obscureText,
+                                    onChanged: (value) {
+                                      if (value.isEmpty) {
+                                        setState(() {
+                                          _color = false;
+                                        });
+                                      }
+                                    },
                                   ),
                                 ],
                               ),
                             ),
-                            const SizedBox(height: 25),
-                            DefaultTextStyle(
-                              style: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
-                              child: SizedBox(
-                                width: 277,
-                                child: Row(
-                                  children: <Widget>[
-                                    Checkbox(
-                                      value: _agree1,
-                                      activeColor:
-                                          const Color.fromRGBO(58, 90, 13, 1),
-                                      onChanged: (isChecked) {
-                                        setState(() {
-                                          _agree1 = isChecked!;
-                                        });
-                                      },
-                                    ),
-                                    const Text('Acepto los'),
-                                    TextButton(
-                                      onPressed: () {},
-                                      child: const Text(
-                                        'términos y condiciones',
-                                        style: TextStyle(
-                                          color: Color.fromRGBO(58, 90, 13, 1),
-                                          decoration: TextDecoration.underline,
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            SizedBox(
+                              width: 277,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  const Text(
+                                    'Confirmar contraseña',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        color:
+                                            Color.fromRGBO(102, 110, 122, 1)),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                      suffixIcon: IconButton(
+                                        icon: Icon(
+                                          Icons.check_circle,
+                                          color: _colorconfirm
+                                              ? Colors.green
+                                              : Colors.red,
                                         ),
+                                        onPressed: () {
+                                          setState(() {
+                                            _obscureText = !_obscureText;
+                                          });
+                                        },
+                                      ),
+                                      hintText: 'Nueva contraseña',
+                                      fillColor: const Color.fromRGBO(
+                                          239, 239, 234, 1),
+                                      filled: true,
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                        borderSide: const BorderSide(
+                                            color: Color.fromRGBO(
+                                                217, 219, 214, 1),
+                                            width: 2.0),
                                       ),
                                     ),
-                                  ],
-                                ),
+                                    validator: (val) {
+                                      if (val == null || val.isEmpty) {
+                                        return 'Campo vacío';
+                                      } else if (val.length < 6) {
+                                        return 'Password too short.';
+                                      }
+                                      return null;
+                                    },
+                                    onSaved: (val) => _password = val!,
+                                    obscureText: _obscureText,
+                                    onChanged: (value) {
+                                      if (value.isEmpty) {
+                                        setState(() {
+                                          _colorconfirm = false;
+                                        });
+                                      }
+                                    },
+                                  ),
+                                ],
                               ),
                             ),
-                            DefaultTextStyle(
-                              style: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
-                              child: SizedBox(
-                                width: 277,
-                                child: Wrap(
-                                  crossAxisAlignment: WrapCrossAlignment.center,
-                                  alignment: WrapAlignment.start,
-                                  children: <Widget>[
-                                    Checkbox(
-                                        value: _agree2,
-                                        activeColor:
-                                            const Color.fromRGBO(58, 90, 13, 1),
-                                        onChanged: (isChecked) {
-                                          setState(() {
-                                            _agree2 = isChecked!;
-                                          });
-                                        }),
-                                    const Text(
-                                        'Acepto los términos y condiciones'),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 25),
+                            const SizedBox(height: 35),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
@@ -260,7 +220,8 @@ class _RegistroState extends State<Registro> {
                                 if (_formKey2.currentState!.validate()) {
                                   // Process data.
                                 }
-                                Navigator.of(context).popAndPushNamed('/login');
+                                Navigator.of(context).popAndPushNamed(
+                                    '/confirmacionContrasenaRestablecida');
                               },
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
@@ -269,7 +230,7 @@ class _RegistroState extends State<Registro> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
                                     const Text(
-                                      'Registrarse',
+                                      'Cambiar contraseña',
                                       style: TextStyle(
                                         color: Color.fromRGBO(27, 45, 67, 1),
                                         fontWeight: FontWeight.w500,
@@ -290,8 +251,39 @@ class _RegistroState extends State<Registro> {
                               ),
                             ),
                             const SizedBox(
-                              height: 70,
-                            )
+                              height: 50,
+                            ),
+                            const SizedBox(height: 35),
+                            DefaultTextStyle(
+                              style: const TextStyle(
+                                fontSize: 10,
+                                color: Color.fromRGBO(94, 94, 94, 1),
+                              ),
+                              child: SizedBox(
+                                width: 277,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    const Text(
+                                        '¿Ya tienes una cuenta? Inicia sesión'),
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: const Text(
+                                        'Aquí',
+                                        style: TextStyle(
+                                          color: Color.fromRGBO(58, 90, 13, 1),
+                                          decoration: TextDecoration.underline,
+                                          fontSize: 11,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
                           ],
                         ),
                       ),
@@ -307,10 +299,10 @@ class _RegistroState extends State<Registro> {
                   child: Padding(
                     padding: EdgeInsets.only(left: 25),
                     child: Text(
-                      'Registro',
+                      'Restablece tu contraseña',
                       style: TextStyle(
                         color: Color.fromRGBO(58, 90, 13, 1),
-                        fontSize: 33,
+                        fontSize: 24,
                         fontWeight: FontWeight.w700,
                       ),
                     ),

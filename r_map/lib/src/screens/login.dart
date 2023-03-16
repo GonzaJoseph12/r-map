@@ -142,7 +142,10 @@ class _LoginState extends State<Login> {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: <Widget>[
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.of(context).popAndPushNamed(
+                                            '/reestablecerContrasena');
+                                      },
                                       child: const Text(
                                         '¿Olvidaste tu contraseña?',
                                         style: TextStyle(
@@ -201,6 +204,8 @@ class _LoginState extends State<Login> {
                                   if (_formKey.currentState!.validate()) {
                                     // Process data.
                                   }
+                                  Navigator.of(context)
+                                      .popAndPushNamed('/bienvenida');
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -234,6 +239,8 @@ class _LoginState extends State<Login> {
                               const SizedBox(height: 25),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
+                                  side: const BorderSide(
+                                      width: 1, color: Colors.black),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50),
                                   ),
@@ -295,7 +302,10 @@ class _LoginState extends State<Login> {
                                     children: <Widget>[
                                       const Text('Registrate'),
                                       TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .popAndPushNamed('/registro');
+                                        },
                                         child: const Text(
                                           'Aquí',
                                           style: TextStyle(
