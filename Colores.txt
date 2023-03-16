@@ -2,7 +2,7 @@
 
 --blue-dark		|	1B2D43	const Color.fromRGBO(27, 45, 67, 1),
 
---background		|	E4EFED 
+--background		|	E4EFED 	const Color.fromRGBO(228, 239, 237, 1),
 
 --yellow-light		|	F0E9B1
 
@@ -28,3 +28,10 @@ fondo input 		|	#EFEFF0	const Color.fromRGBO(239, 239, 234, 1),
 Border input 		|	D9DBD6	const Color.fromRGBO(217, 219, 214, 1),
 
 fondo boton		|	#e3efed	const Color.fromRGBO(227, 239, 237, 1),
+
+
+--green-pacay		|	#769A29	const Color.fromRGBO(118, 154, 41, 1),
+
+--blue-dark-v2		|	#1B2D43	const Color.fromRGBO(27, 45, 67, 1),
+
+
