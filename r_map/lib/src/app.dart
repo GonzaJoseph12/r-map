@@ -9,6 +9,8 @@ import 'package:r_map/src/screens/recuperacion_contrasena.dart';
 import 'package:r_map/src/screens/registro.dart';
 import 'package:r_map/src/screens/reestablecer_contrasena.dart';
 import 'package:r_map/src/screens/seleccion_user.dart';
+import 'package:r_map/src/screens/select_establishment.dart';
+import 'package:r_map/src/screens/dashboard.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -27,7 +29,9 @@ class MyApp extends StatelessWidget {
           builder: (BuildContext context) {
             switch (settings.name) {
               case "/":
-                return const SeleccionUser();
+                // return const SeleccionUser();
+                // return const dashboard();
+                return const Establishment();
               case "/login":
                 return const Login();
               case "/registro":
