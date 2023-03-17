@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
             switch (settings.name) {
               case "/":
                 // return const Registro();
-                // return dashboard();
-                return Establishment();
+                return dashboard();
+                // return Establishment();
               case "/login":
                 return const Login();
               default:

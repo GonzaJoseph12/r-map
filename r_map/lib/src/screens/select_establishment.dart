@@ -13,7 +13,7 @@ class _EstablishmentState extends State<Establishment> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   //map
   GoogleMapController? _mapController;
-  final LatLng _center = const LatLng(37.7749, -122.4194);
+  final LatLng _center = const LatLng(-14.064320, -75.728937);
   final Set<Marker> _markers = {};
 
   @override
@@ -23,8 +23,8 @@ class _EstablishmentState extends State<Establishment> {
         markerId: MarkerId('id'),
         position: _center,
         infoWindow: InfoWindow(
-          title: 'San Francisco',
-          snippet: 'The Golden City',
+          title: 'Plaza de armas',
+          snippet: 'Plaza de armas',
         ),
       ),
     );
@@ -125,25 +125,38 @@ class _EstablishmentState extends State<Establishment> {
                 ),
                 //FILA BUSCADOR
 //AQUI QUIERO QUE VALLA EL MAPA
-                Expanded(
-                  child: GoogleMap(
-                    initialCameraPosition: CameraPosition(
-                      target: LatLng(-33.4489, -70.6693),
-                      zoom: 12,
-                    ),
-                  ),
-                ),
-                Expanded(
+                // Expanded(
+                //   child: GoogleMap(
+                //     initialCameraPosition: CameraPosition(
+                //       target: LatLng(-33.4489, -70.6693),
+                //       zoom: 12,
+                //     ),
+                //   ),
+                // ),
+                // Expanded(
+                //   child: GoogleMap(
+                //     onMapCreated: _onMapCreated,
+                //     markers: _markers,
+                //     initialCameraPosition: CameraPosition(
+                //       target: LatLng(-33.4489, -70.6693),
+                //       zoom: 12,
+                //     ),
+                //   ),
+                // ),
+                SizedBox(
+  height: 260,
   child: GoogleMap(
     onMapCreated: _onMapCreated,
     markers: _markers,
     initialCameraPosition: CameraPosition(
-      target: LatLng(-33.4489, -70.6693),
+      target: LatLng(-14.064320,-75.728937),
       zoom: 12,
     ),
   ),
 ),
-
+SizedBox(
+  height: 15,
+),
 //TEXTO Y LINEA
                 Row(
                   children: [
@@ -189,13 +202,13 @@ Container(
       Card(
         elevation: 2, // agrega sombra
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.location_on, size: 30.0, color: const Color.fromRGBO(197, 223, 161, 1),),
+                padding: EdgeInsets.all(4.0),
+                child: Icon(Icons.location_on, size: 25.0, color: const Color.fromRGBO(197, 223, 161, 1),),
               ),
               SizedBox(width: 4.0),
               Expanded(
@@ -236,13 +249,13 @@ Container(
         color: const Color.fromRGBO(217, 229, 198, 1),
         elevation: 2, // agrega sombra
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.location_on, size: 30.0, color: const Color.fromRGBO(197, 223, 161, 1),),
+                padding: EdgeInsets.all(4.0),
+                child: Icon(Icons.location_on, size: 25.0, color: const Color.fromRGBO(197, 223, 161, 1),),
               ),
               SizedBox(width: 4.0),
               Expanded(
@@ -283,15 +296,15 @@ Container(
         // color: const Color.fromRGBO(217, 229, 198, 1),
         elevation: 2, // agrega sombra
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.location_on, size: 30.0, color: const Color.fromRGBO(197, 223, 161, 1),),
+                padding: EdgeInsets.all(4.0),
+                child: Icon(Icons.location_on, size: 25.0, color: const Color.fromRGBO(197, 223, 161, 1),),
               ),
-              SizedBox(width: 4.0),
+              SizedBox(width: 3.0),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -304,7 +317,7 @@ Container(
                         color: const Color.fromRGBO(58, 90, 13, 1),
                       ),
                     ),
-                    SizedBox(height: 4.0),
+                    SizedBox(height: 3.0),
                     Text(
                       "Dirección del lugar",
                       style: TextStyle(
