@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:r_map/src/partes/alert.dart';
 import 'package:r_map/src/screens/bienvenida.dart';
 import 'package:r_map/src/screens/confirmacion_contrasena_reestablecida.dart';
+import 'package:r_map/src/screens/editar_info_personal.dart';
+import 'package:r_map/src/screens/editar_perfil.dart';
 import 'package:r_map/src/screens/example.dart';
 import 'package:r_map/src/components/carousel.dart';
 import 'package:r_map/src/screens/login.dart';
@@ -40,6 +43,10 @@ class MyApp extends StatelessWidget {
                 return const ReestablecerContrasena();
               case "/confirmacionContrasenaRestablecida":
                 return const ConfirmacionContrasenaRestablecida();
+              case "/editarPerfil":
+                return const EditarPerfil();
+              case "/editarInfoPersonal":
+                return const EditarInfoPersonal();
               default:
                 return const PageNotFound();
             }
