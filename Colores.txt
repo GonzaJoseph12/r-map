@@ -6,7 +6,7 @@
 
 --yellow-light		|	F0E9B1
 
---text-color-inactive	|	5E5E5E
+--text-color-inactive	|	5E5E5E	const Color.fromRGBO(94, 94, 94, 1),
 
 --green-dark		|	3A5A0D	const Color.fromRGBO(58, 90, 13, 1),
 
@@ -35,3 +35,4 @@ fondo boton		|	#e3efed	const Color.fromRGBO(227, 239, 237, 1),
 --blue-dark-v2		|	#1B2D43	const Color.fromRGBO(27, 45, 67, 1),
 
 
+#D6D8DB			|	const Color.fromRGBO(214, 216, 219, 1),

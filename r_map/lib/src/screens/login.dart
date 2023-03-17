@@ -144,7 +144,7 @@ class _LoginState extends State<Login> {
                                     InkWell(
                                       onTap: () {
                                         Navigator.of(context).popAndPushNamed(
-                                            '/reestablecerContrasena');
+                                            '/recuperacionContrasena');
                                       },
                                       child: const Text(
                                         '¿Olvidaste tu contraseña?',

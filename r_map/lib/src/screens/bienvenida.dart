@@ -83,7 +83,8 @@ class _BienvenidaState extends State<Bienvenida> {
                               color: Color.fromRGBO(58, 90, 13, 1),
                             ),
                             onPressed: () {
-                              Navigator.of(context).popAndPushNamed('/login');
+                              Navigator.of(context)
+                                  .popAndPushNamed('/editarPerfil');
                             },
                           ),
                         ),
