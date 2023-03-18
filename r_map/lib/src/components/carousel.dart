@@ -26,7 +26,7 @@ class _CarouselWithDotsPageState extends State<CarouselWithDotsPage> {
               child: Image.asset(
                 item,
                 scale: 1,
-                height: 300,
+                height: 200,
               ),
             ))
         .toList();

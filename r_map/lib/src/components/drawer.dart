@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Drawer(
       backgroundColor: const Color.fromRGBO(227, 239, 237, 1),
       child: ListView(
@@ -49,7 +50,7 @@ class MyDrawer extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Juan Roberto",
+                            user.email!.split("@")[0].toUpperCase(),
                             style: TextStyle(
                               fontSize: 17.0,
                               fontWeight: FontWeight.bold,
@@ -58,7 +59,7 @@ class MyDrawer extends StatelessWidget {
                           ),
                           SizedBox(height: 2.0),
                           Text(
-                            " juancito123@gmail.com",
+                            user.email!,
                             style: TextStyle(
                               fontSize: 13.0,
                               color: Colors.grey[700],
@@ -297,7 +298,11 @@ class MyDrawer extends StatelessWidget {
                         color: Colors.black,
                         size: 35,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+  FirebaseAuth.instance.signOut();
+  Navigator.of(context).popAndPushNamed('/login');
+},
+
                     ),
                   ],
                 ),

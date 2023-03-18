@@ -22,6 +22,7 @@ class _ConfirmacionContrasenaRestablecidaState
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              SizedBox(height: 50,),
               Row(
                 children: const <Widget>[
                   Icon(
@@ -43,13 +44,17 @@ class _ConfirmacionContrasenaRestablecidaState
               const SizedBox(
                 height: 15,
               ),
-              const Text(
-                'Tu contraseña ha sido actualizada correctamente. Ya puedes iniciar sesión en tu cuenta.',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    color: Color.fromRGBO(21, 22, 25, 1)),
-              ),
+  Container(
+  margin: EdgeInsets.only(right: 19.0),
+  child: Text(
+    'Tu contraseña ha sido actualizada correctamente. Ya puedes iniciar sesión en tu cuenta.',
+    style: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 17,
+      color: Color.fromRGBO(21, 22, 25, 1),
+    ),
+  ),
+),
               const SizedBox(
                 height: 25,
               ),
