@@ -68,11 +68,11 @@ class MyDrawer extends StatelessWidget {
                           SizedBox(height: 10.0),
                           Row(
                             children: [
-                              Icon(Icons.currency_bitcoin,
+                              Icon(Icons.shield_rounded,
                                   color: Colors.yellow, size: 25.0),
                               SizedBox(width: 4.0),
                               Text(
-                                "100",
+                                "500",
                                 style: TextStyle(
                                   fontSize: 13.0,
                                   color: Colors.grey[700],

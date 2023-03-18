@@ -90,7 +90,7 @@ class _EstablishmentState extends State<Establishment> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(width: 10),
-                      Icon(Icons.currency_bitcoin_sharp),
+                      Icon(Icons.shield_rounded, color: Colors.yellow,),
                       Text('500'),
                     ],
                   ),
