@@ -52,7 +52,6 @@ class _EstablishmentState extends State<Establishment> {
                 SizedBox(
                   height: 20,
                 ),
-                //PRIMERA FILA
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Row(
@@ -61,10 +60,17 @@ class _EstablishmentState extends State<Establishment> {
                       Row(
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .popAndPushNamed('/bienvenida');
+                            },
                             icon: Icon(Icons.arrow_back),
                           ),
-                          Text('Nueva Visita'),
+                          Text('Nueva visita',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  )),
                         ],
                       ),
                       IconButton(
@@ -123,41 +129,25 @@ class _EstablishmentState extends State<Establishment> {
                     ),
                   ),
                 ),
-                //FILA BUSCADOR
-//AQUI QUIERO QUE VALLA EL MAPA
-                // Expanded(
-                //   child: GoogleMap(
-                //     initialCameraPosition: CameraPosition(
-                //       target: LatLng(-33.4489, -70.6693),
-                //       zoom: 12,
-                //     ),
-                //   ),
-                // ),
-                // Expanded(
-                //   child: GoogleMap(
-                //     onMapCreated: _onMapCreated,
-                //     markers: _markers,
-                //     initialCameraPosition: CameraPosition(
-                //       target: LatLng(-33.4489, -70.6693),
-                //       zoom: 12,
-                //     ),
-                //   ),
-                // ),
                 SizedBox(
-  height: 260,
-  child: GoogleMap(
-    onMapCreated: _onMapCreated,
-    markers: _markers,
-    initialCameraPosition: CameraPosition(
-      target: LatLng(-14.064320,-75.728937),
-      zoom: 12,
-    ),
-  ),
-),
-SizedBox(
-  height: 15,
-),
-//TEXTO Y LINEA
+                  height: 10,
+                ),
+                //FILA BUSCADOR
+                SizedBox(
+                  height: 260,
+                  child: GoogleMap(
+                    onMapCreated: _onMapCreated,
+                    markers: _markers,
+                    initialCameraPosition: CameraPosition(
+                      target: LatLng(-14.064320, -75.728937),
+                      zoom: 16,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+
                 Row(
                   children: [
                     Padding(
@@ -171,7 +161,7 @@ SizedBox(
                 ),
 
                 SizedBox(
-                  height: 5,
+                  height: 15,
                 ),
 
                 // LINEA
@@ -196,150 +186,132 @@ SizedBox(
                   height: 10,
                 ),
 
-//TEXTO Y LINEA
-//cards
-Container(
-  padding: EdgeInsets.symmetric(horizontal: 40.0),
-  child: Column(
-    children: [
-      Card(
-        elevation: 2, // agrega sombra
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.all(4.0),
-                child: Icon(Icons.location_on, size: 25.0, color: const Color.fromRGBO(197, 223, 161, 1),),
-              ),
-              SizedBox(width: 4.0),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Nombre del establecimiento",
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                        color: const Color.fromRGBO(58, 90, 13, 1),
+                
+                //DESPLAZ
+//    SingleChildScrollView(
+//   child: Padding(
+//     padding: EdgeInsets.symmetric(horizontal: 35.0,vertical: 0),
+//     child: SizedBox(
+//       height: 150, // Ajusta la altura máxima de la sección de tarjetas
+//       child: ListView.builder(
+//         itemCount: 5,
+//         itemBuilder: (BuildContext context, int index) {
+//           return Card(
+//             elevation: 2,
+//             child: Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Row(
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 children: [
+//                   Container(
+//                     padding: EdgeInsets.all(4.0),
+//                     child: Icon(
+//                       Icons.location_on,
+//                       size: 25.0,
+//                       color: const Color.fromRGBO(197, 223, 161, 1),
+//                     ),
+//                   ),
+//                   SizedBox(width: 3.0),
+//                   Expanded(
+//                     child: Column(
+//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       children: [
+//                         Text(
+//                           "Nombre del establecimiento",
+//                           style: TextStyle(
+//                             fontSize: 17.0,
+//                             fontWeight: FontWeight.bold,
+//                             color: const Color.fromRGBO(58, 90, 13, 1),
+//                           ),
+//                         ),
+//                         SizedBox(height: 3.0),
+//                         Text(
+//                           "Dirección del lugar",
+//                           style: TextStyle(
+//                             fontSize: 13.0,
+//                             color: Colors.grey[700],
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           );
+//         },
+//       ),
+//     ),
+//   ),
+// ),
+SingleChildScrollView(
+  child: Padding(
+    padding: EdgeInsets.symmetric(horizontal: 35.0,vertical: 0),
+    child: SizedBox(
+      height: 150, // Ajusta la altura máxima de la sección de tarjetas
+      child: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            margin: EdgeInsets.symmetric(vertical: 0.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).popAndPushNamed('/recycling');
+              },
+              child: Card(
+                elevation: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(4.0),
+                        child: Icon(
+                          Icons.location_on,
+                          size: 25.0,
+                          color: const Color.fromRGBO(197, 223, 161, 1),
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 4.0),
-                    Text(
-                      "Dirección del lugar",
-                      style: TextStyle(
-                        fontSize: 13.0,
-                        color: Colors.grey[700],
+                      SizedBox(width: 3.0),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Nombre del establecimiento",
+                              style: TextStyle(
+                                fontSize: 17.0,
+                                fontWeight: FontWeight.bold,
+                                color: const Color.fromRGBO(58, 90, 13, 1),
+                              ),
+                            ),
+                            SizedBox(height: 3.0),
+                            Text(
+                              "Dirección del lugar",
+                              style: TextStyle(
+                                fontSize: 13.0,
+                                color: Colors.grey[700],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ],
-          ),
-        ),
+            ),
+          );
+        },
       ),
-    ],
-  ),
-),
-Container(
-  padding: EdgeInsets.symmetric(horizontal: 40.0),
-  child: Column(
-    children: [
-      Card(
-        color: const Color.fromRGBO(217, 229, 198, 1),
-        elevation: 2, // agrega sombra
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.all(4.0),
-                child: Icon(Icons.location_on, size: 25.0, color: const Color.fromRGBO(197, 223, 161, 1),),
-              ),
-              SizedBox(width: 4.0),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Nombre del establecimiento",
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                        color: const Color.fromRGBO(58, 90, 13, 1),
-                      ),
-                    ),
-                    SizedBox(height: 4.0),
-                    Text(
-                      "Dirección del lugar",
-                      style: TextStyle(
-                        fontSize: 13.0,
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ],
-  ),
-),
-Container(
-  padding: EdgeInsets.symmetric(horizontal: 40.0),
-  child: Column(
-    children: [
-      Card(
-        // color: const Color.fromRGBO(217, 229, 198, 1),
-        elevation: 2, // agrega sombra
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.all(4.0),
-                child: Icon(Icons.location_on, size: 25.0, color: const Color.fromRGBO(197, 223, 161, 1),),
-              ),
-              SizedBox(width: 3.0),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Nombre del establecimiento",
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                        color: const Color.fromRGBO(58, 90, 13, 1),
-                      ),
-                    ),
-                    SizedBox(height: 3.0),
-                    Text(
-                      "Dirección del lugar",
-                      style: TextStyle(
-                        fontSize: 13.0,
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ],
+    ),
   ),
 ),
 
-//cards
+
+                //DESPLAZ
+
               ],
             ),
           ),

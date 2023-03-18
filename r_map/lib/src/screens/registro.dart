@@ -18,7 +18,8 @@ class _RegistroState extends State<Registro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+        child: Container(
         color: const Color.fromRGBO(217, 229, 198, 1),
         height: double.infinity,
         width: double.infinity,
@@ -26,28 +27,20 @@ class _RegistroState extends State<Registro> {
           // alignment: AlignmentDirectional.center,
           children: <Widget>[
             Positioned(
-              top: 0,
-              child: Image.asset(
-                'assets/gree-natural1.png',
-                color: const Color.fromRGBO(180, 205, 171, 0.7),
-                height: 267,
-              ),
-            ),
-            Positioned(
               child: Form(
                 key: _formKey2,
                 child: Column(
                   children: <Widget>[
                     Container(
-                      width: 375,
+                      width: 420,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
                         color: const Color.fromRGBO(255, 255, 255, 1),
                       ),
-                      margin: const EdgeInsets.only(top: 230),
+                      margin: const EdgeInsets.only(top: 170),
                       child: Padding(
                         padding: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 20, top: 40),
+                            left: 35, right: 35, bottom: 20, top: 35),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
@@ -89,7 +82,7 @@ class _RegistroState extends State<Registro> {
                               ),
                             ),
                             const SizedBox(
-                              height: 20,
+                              height: 15,
                             ),
                             SizedBox(
                               width: 277,
@@ -129,7 +122,7 @@ class _RegistroState extends State<Registro> {
                               ),
                             ),
                             const SizedBox(
-                              height: 20,
+                              height: 15,
                             ),
                             SizedBox(
                               width: 277,
@@ -180,7 +173,7 @@ class _RegistroState extends State<Registro> {
                                 ],
                               ),
                             ),
-                            const SizedBox(height: 25),
+                            const SizedBox(height: 10),
                             DefaultTextStyle(
                               style: const TextStyle(
                                 fontSize: 12,
@@ -241,7 +234,7 @@ class _RegistroState extends State<Registro> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 25),
+                            const SizedBox(height: 20),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
@@ -290,7 +283,7 @@ class _RegistroState extends State<Registro> {
                               ),
                             ),
                             const SizedBox(
-                              height: 70,
+                              height: 8,
                             )
                           ],
                         ),
@@ -301,7 +294,7 @@ class _RegistroState extends State<Registro> {
               ),
             ),
             const Positioned(
-                top: 150,
+                top: 100,
                 child: SizedBox(
                   width: 365,
                   child: Padding(
@@ -342,6 +335,7 @@ class _RegistroState extends State<Registro> {
             ),
           ],
         ),
+      ),
       ),
     );
   }

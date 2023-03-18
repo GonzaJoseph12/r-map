@@ -14,9 +14,18 @@ class _SeleccionUserState extends State<SeleccionUser> {
           color: const Color.fromRGBO(228, 239, 237, 1),
           height: double.infinity,
           width: double.infinity,
+          child: SingleChildScrollView(
+          
+
+
+
+
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              SizedBox(
+            height: 150,
+          ),
               Image.asset(
                 'assets/logo.png',
                 height: 159,
@@ -98,7 +107,25 @@ class _SeleccionUserState extends State<SeleccionUser> {
                 ),
               ),
             ],
-          )),
+          ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ),
+
+
+          ),
     );
   }
 }
