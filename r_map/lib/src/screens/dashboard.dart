@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:r_map/src/components/drawer.dart';
+
 class dashboard extends StatefulWidget {
   const dashboard({super.key});
 
@@ -49,14 +49,13 @@ class _dashboardState extends State<dashboard> {
                   ),
                 ),
 
-
                 Container(
                   margin: EdgeInsets.only(right: 50),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(width: 10),
-                      Icon(Icons.currency_bitcoin_sharp),
+                      Icon(Icons.shield_rounded, color: Colors.yellow),
                       Text('500'),
                     ],
                   ),
@@ -362,7 +361,7 @@ class _dashboardState extends State<dashboard> {
                 ),
 
                 SizedBox(
-                  height: 25,
+                  height: 10,
                 ),
 
 //TIMELINE
@@ -493,147 +492,56 @@ class _dashboardState extends State<dashboard> {
                 ),
 
                 SizedBox(
-                  height: 25,
+                  height: 10,
                 ),
 
-// Padding(
-//   padding: EdgeInsets.only(left: 100),
-//   child: GestureDetector(
-//     onTap: () {
-//       // Acción que se realiza al presionar el botón
-//     },
-//     child: Container(
-//       width: 191,
-//       height: 40,
-//       child: Stack(
-//         children: [
-//           Container(
-//             width: 191,
-//             height: 40,
-//             child: Row(
-//               mainAxisSize: MainAxisSize.max,
-//               mainAxisAlignment: MainAxisAlignment.start,
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Expanded(
-//                   child: Container(
-//                     decoration: BoxDecoration(
-//                       borderRadius: BorderRadius.circular(20),
-//                       color: Color(0xffd8e5c6),
-//                     ),
-//                     padding: const EdgeInsets.symmetric(
-//                         horizontal: 16, vertical: 8),
-//                     child: Row(
-//                       mainAxisSize: MainAxisSize.max,
-//                       mainAxisAlignment: MainAxisAlignment.center,
-//                       crossAxisAlignment: CrossAxisAlignment.center,
-//                       children: [
-//                         SizedBox(
-//                           width: 110,
-//                           child: Text(
-//                             "Iniciar visita",
-//                             style: TextStyle(
-//                               color: Color(0xff3a5a0c),
-//                               fontSize: 16,
-//                               fontFamily: "Inter",
-//                               fontWeight: FontWeight.w500,
-//                             ),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//           Positioned(
-//             left: 130,
-//             top: 3,
-//             child: Icon(Icons.arrow_forward,
-//                 color: Color(0xff3a5a0c), size: 30),
-//           ),
-//         ],
-//       ),
-//     ),
-//   ),
-// )
 
-//intento
-                Padding(
-                  padding: EdgeInsets.only(left: 100),
-                  child: GestureDetector(
-                    onTap: () {
-                      // Acción que se realiza al presionar el botón
-                    },
-                    child: Container(
-                      width: 191,
-                      height: 40,
-                      child: Stack(
-                        children: [
-                          Container(
-                            width: 191,
-                            height: 40,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: Color(0xffd8e5c6),
-                                    ),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16, vertical: 8),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        SizedBox(
-                                          width: 110,
-                                          child: Text(
-                                            "Iniciar visita",
-                                            style: TextStyle(
-                                              color: Color(0xff3a5a0c),
-                                              fontSize: 16,
-                                              fontFamily: "Inter",
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Positioned(
-                            left: 130,
-                            top: 3,
-                            child: Icon(Icons.arrow_forward,
-                                color: Color(0xff3a5a0c), size: 30),
-                          ),
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 0.05,
-                            blurRadius: 15,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+
+Padding(
+  padding: EdgeInsets.only(left: 180),
+  child: GestureDetector(
+    onTap: () {
+      Navigator.of(context).popAndPushNamed('/establishment');
+    },
+    child: Container(
+      width: 180, // Ajusta el ancho del botón según tus necesidades
+      height: 40, // Ajusta el alto del botón según tus necesidades
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Color(0xffd8e5c6),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 0.05,
+            blurRadius: 5,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "Iniciar visita",
+            style: TextStyle(
+              color: Color(0xff3a5a0c),
+              fontSize: 18,
+              fontFamily: "Inter",
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          Icon(
+            Icons.arrow_forward,
+            color: Color(0xff3a5a0c),
+            size: 30,
+          ),
+        ],
+      ),
+    ),
+  ),
+),
 
                 //FIN TIMELINE
               ],
