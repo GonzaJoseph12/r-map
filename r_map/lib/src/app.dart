@@ -35,6 +35,8 @@ class MyApp extends StatelessWidget {
           builder: (BuildContext context) {
             switch (settings.name) {
               case "/":
+                // return const SeleccionUser();
+                // return const dashboard();
                 return const SeleccionUser();
               case "/login":
               return StreamBuilder<User?>(
