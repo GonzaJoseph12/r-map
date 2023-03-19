@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:r_map/src/screens/bienvenida.dart';
 import 'package:r_map/src/screens/confirmacion_contrasena_reestablecida.dart';
+import 'package:r_map/src/screens/editar_info_personal.dart';
+import 'package:r_map/src/screens/editar_perfil.dart';
 import 'package:r_map/src/screens/example.dart';
 import 'package:r_map/src/components/carousel.dart';
 import 'package:r_map/src/screens/login.dart';
@@ -15,8 +17,8 @@ import 'package:r_map/src/screens/seleccion_user.dart';
 import 'package:r_map/src/screens/select_establishment.dart';
 import 'package:r_map/src/screens/dashboard.dart';
 
-
 final navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -35,27 +37,26 @@ class MyApp extends StatelessWidget {
           builder: (BuildContext context) {
             switch (settings.name) {
               case "/":
-                // return const SeleccionUser();
-                // return const dashboard();
                 return const SeleccionUser();
+              // return const dashboard();
+              // return const EditarInfoPersonal();
               case "/login":
-              return StreamBuilder<User?>(
-                stream: FirebaseAuth.instance.authStateChanges(),
-                builder: (context, snapshot) {
-                  // if(snapshot.connectionState == ConnectionState.waiting){
-                  //   return Center(child: CircularProgressIndicator());
-                  // }else if(snapshot.hasError){
-                  //   return Center(child: Text("Algo salio mal"));
-                  // }else 
-                  
-                  
-                  if (!snapshot.hasData) {
-                    return Login();
-                  } else {
-                    return Bienvenida();
-                  }
-                },
-              );
+                return StreamBuilder<User?>(
+                  stream: FirebaseAuth.instance.authStateChanges(),
+                  builder: (context, snapshot) {
+                    // if(snapshot.connectionState == ConnectionState.waiting){
+                    //   return Center(child: CircularProgressIndicator());
+                    // }else if(snapshot.hasError){
+                    //   return Center(child: Text("Algo salio mal"));
+                    // }else
+
+                    if (!snapshot.hasData) {
+                      return const Login();
+                    } else {
+                      return const Bienvenida();
+                    }
+                  },
+                );
               case "/registro":
                 return const Registro();
               case "/bienvenida":
@@ -72,6 +73,10 @@ class MyApp extends StatelessWidget {
                 return const Establishment();
               case "/recycling":
                 return const InfoRecycling();
+              case "/editarPerfil":
+                return const EditarPerfil();
+              case "/editarInfoPersonal":
+                return const EditarInfoPersonal();
               default:
                 return const PageNotFound();
             }
