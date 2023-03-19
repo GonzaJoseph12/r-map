@@ -198,6 +198,7 @@ class _EstablishmentState extends State<Establishment> {
                   height: 10,
                 ),
 
+
                 //DESPLAZ
 //    SingleChildScrollView(
 //   child: Padding(

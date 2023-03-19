@@ -17,6 +17,10 @@ import 'package:r_map/src/screens/seleccion_user.dart';
 import 'package:r_map/src/screens/select_establishment.dart';
 import 'package:r_map/src/screens/dashboard.dart';
 
+import 'package:r_map/src/screens/list_post.dart';
+import 'package:r_map/src/screens/edit_posts.dart';
+
+
 final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
@@ -77,6 +81,10 @@ class MyApp extends StatelessWidget {
                 return const EditarPerfil();
               case "/editarInfoPersonal":
                 return const EditarInfoPersonal();
+              case "/posts":
+                return const Posts();
+              case "/my_posts":
+                return const MyPosts();
               default:
                 return const PageNotFound();
             }
