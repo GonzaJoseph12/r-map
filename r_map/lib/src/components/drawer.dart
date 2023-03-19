@@ -178,7 +178,7 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              // Update the UI based on drawer item selected
+              Navigator.of(context).popAndPushNamed('/my_posts');
             },
             contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
             title: Padding(

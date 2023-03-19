@@ -14,7 +14,8 @@ import 'package:r_map/src/screens/reestablecer_contrasena.dart';
 import 'package:r_map/src/screens/seleccion_user.dart';
 import 'package:r_map/src/screens/select_establishment.dart';
 import 'package:r_map/src/screens/dashboard.dart';
-
+import 'package:r_map/src/screens/list_post.dart';
+import 'package:r_map/src/screens/edit_posts.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 class MyApp extends StatelessWidget {
@@ -72,6 +73,10 @@ class MyApp extends StatelessWidget {
                 return const Establishment();
               case "/recycling":
                 return const InfoRecycling();
+              case "/posts":
+                return const Posts();
+              case "/my_posts":
+                return const MyPosts();
               default:
                 return const PageNotFound();
             }

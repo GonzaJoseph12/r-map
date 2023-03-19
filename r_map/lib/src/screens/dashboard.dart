@@ -205,7 +205,7 @@ class _dashboardState extends State<dashboard> {
                                           left: 76, bottom: 0),
                                       child: GestureDetector(
                                         onTap: () {
-                                          // Acción que se realiza al presionar el botón
+                                          Navigator.of(context).popAndPushNamed('/posts');
                                         },
                                         child: Container(
                                           width: 35,
@@ -221,7 +221,10 @@ class _dashboardState extends State<dashboard> {
                                             child: IconButton(
                                               icon: Icon(Icons
                                                   .arrow_back_ios_new_sharp),
-                                              onPressed: () {},
+                                              onPressed: () {
+
+                                                Navigator.of(context).popAndPushNamed('/posts');
+                                              },
                                               color: Colors.white,
                                               iconSize: 20,
                                             ),

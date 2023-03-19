@@ -75,6 +75,7 @@ flutter:
     - assets/icon/re-min.png
     - assets/profile.png
     - assets/logros.png
+    - assets/person_r.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -67,10 +67,10 @@ class _EstablishmentState extends State<Establishment> {
                             icon: Icon(Icons.arrow_back),
                           ),
                           Text('Nueva visita',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
-                                  )),
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              )),
                         ],
                       ),
                       IconButton(
@@ -90,7 +90,10 @@ class _EstablishmentState extends State<Establishment> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(width: 10),
-                      Icon(Icons.shield_rounded, color: Colors.yellow,),
+                      Icon(
+                        Icons.shield_rounded,
+                        color: Colors.yellow,
+                      ),
                       Text('500'),
                     ],
                   ),
@@ -186,132 +189,79 @@ class _EstablishmentState extends State<Establishment> {
                   height: 10,
                 ),
 
-                
-                //DESPLAZ
-//    SingleChildScrollView(
-//   child: Padding(
-//     padding: EdgeInsets.symmetric(horizontal: 35.0,vertical: 0),
-//     child: SizedBox(
-//       height: 150, // Ajusta la altura máxima de la sección de tarjetas
-//       child: ListView.builder(
-//         itemCount: 5,
-//         itemBuilder: (BuildContext context, int index) {
-//           return Card(
-//             elevation: 2,
-//             child: Padding(
-//               padding: const EdgeInsets.all(8.0),
-//               child: Row(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
-//                   Container(
-//                     padding: EdgeInsets.all(4.0),
-//                     child: Icon(
-//                       Icons.location_on,
-//                       size: 25.0,
-//                       color: const Color.fromRGBO(197, 223, 161, 1),
-//                     ),
-//                   ),
-//                   SizedBox(width: 3.0),
-//                   Expanded(
-//                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           "Nombre del establecimiento",
-//                           style: TextStyle(
-//                             fontSize: 17.0,
-//                             fontWeight: FontWeight.bold,
-//                             color: const Color.fromRGBO(58, 90, 13, 1),
-//                           ),
-//                         ),
-//                         SizedBox(height: 3.0),
-//                         Text(
-//                           "Dirección del lugar",
-//                           style: TextStyle(
-//                             fontSize: 13.0,
-//                             color: Colors.grey[700],
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           );
-//         },
-//       ),
-//     ),
-//   ),
-// ),
-SingleChildScrollView(
-  child: Padding(
-    padding: EdgeInsets.symmetric(horizontal: 35.0,vertical: 0),
-    child: SizedBox(
-      height: 150, // Ajusta la altura máxima de la sección de tarjetas
-      child: ListView.builder(
-        itemCount: 5,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            margin: EdgeInsets.symmetric(vertical: 0.0),
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).popAndPushNamed('/recycling');
-              },
-              child: Card(
-                elevation: 2,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(4.0),
-                        child: Icon(
-                          Icons.location_on,
-                          size: 25.0,
-                          color: const Color.fromRGBO(197, 223, 161, 1),
-                        ),
-                      ),
-                      SizedBox(width: 3.0),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Nombre del establecimiento",
-                              style: TextStyle(
-                                fontSize: 17.0,
-                                fontWeight: FontWeight.bold,
-                                color: const Color.fromRGBO(58, 90, 13, 1),
+                SingleChildScrollView(
+                  child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 35.0, vertical: 0),
+                    child: SizedBox(
+                      height:
+                          150, // Ajusta la altura máxima de la sección de tarjetas
+                      child: ListView.builder(
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            margin: EdgeInsets.symmetric(vertical: 0.0),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.of(context)
+                                    .popAndPushNamed('/recycling');
+                              },
+                              child: Card(
+                                elevation: 2,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.all(4.0),
+                                        child: Icon(
+                                          Icons.location_on,
+                                          size: 25.0,
+                                          color: const Color.fromRGBO(
+                                              197, 223, 161, 1),
+                                        ),
+                                      ),
+                                      SizedBox(width: 3.0),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              "Nombre del establecimiento",
+                                              style: TextStyle(
+                                                fontSize: 17.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: const Color.fromRGBO(
+                                                    58, 90, 13, 1),
+                                              ),
+                                            ),
+                                            SizedBox(height: 3.0),
+                                            Text(
+                                              "Dirección del lugar",
+                                              style: TextStyle(
+                                                fontSize: 13.0,
+                                                color: Colors.grey[700],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
                             ),
-                            SizedBox(height: 3.0),
-                            Text(
-                              "Dirección del lugar",
-                              style: TextStyle(
-                                fontSize: 13.0,
-                                color: Colors.grey[700],
-                              ),
-                            ),
-                          ],
-                        ),
+                          );
+                        },
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-          );
-        },
-      ),
-    ),
-  ),
-),
-
 
                 //DESPLAZ
-
               ],
             ),
           ),
