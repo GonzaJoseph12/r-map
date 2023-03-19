@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:r_map/src/components/drawer.dart';
 import 'package:r_map/src/partes/vista_emergente.dart';
@@ -28,7 +29,7 @@ class _InfoRecyclingState extends State<InfoRecycling> {
                   height: 20,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -60,13 +61,24 @@ class _InfoRecyclingState extends State<InfoRecycling> {
                 //PRIMERA FILA
                 //FILA MONEDA
                 Container(
-                  margin: EdgeInsets.only(right: 50),
+                  margin: const EdgeInsets.only(right: 50),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
+                    children: const <Widget>[
                       SizedBox(width: 10),
-                      Icon(Icons.shield_rounded, color: Colors.yellow,),
-                      Text('500'),
+                      Icon(
+                        CupertinoIcons.checkmark_shield_fill,
+                        color: Color.fromRGBO(202, 171, 9, 1),
+                        size: 18,
+                      ),
+                      SizedBox(
+                        width: 7,
+                      ),
+                      Text(
+                        '100',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                      ),
                     ],
                   ),
                 ),

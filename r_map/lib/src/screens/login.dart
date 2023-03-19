@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
                     key: _formKey,
                     child: Column(
                       children: <Widget>[
-                        SizedBox(
+                        const SizedBox(
                           height: 0,
                         ),
                         Card(
@@ -55,7 +55,7 @@ class _LoginState extends State<Login> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           margin: const EdgeInsets.only(
-                              left: 25, right: 25, top: 50),
+                              left: 25, right: 25, top: 70),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 35, vertical: 20),
@@ -65,7 +65,7 @@ class _LoginState extends State<Login> {
                                 const SizedBox(
                                   height: 60,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 const Center(
@@ -167,7 +167,7 @@ class _LoginState extends State<Login> {
                                       InkWell(
                                         onTap: () {
                                           Navigator.of(context).popAndPushNamed(
-                                              '/reestablecerContrasena');
+                                              '/recuperacionContrasena');
                                         },
                                         child: const Text(
                                           '¿Olvidaste tu contraseña?',
@@ -196,9 +196,12 @@ class _LoginState extends State<Login> {
                                         },
                                       ),
                                       const Text(
-                                          'Recordarme y mantener la sesión',style: TextStyle(
-          fontSize: 13, // Ajusta el tamaño de fuente según tus necesidades
-        ),),
+                                        'Recordarme y mantener la sesión',
+                                        style: TextStyle(
+                                          fontSize:
+                                              13, // Ajusta el tamaño de fuente según tus necesidades
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -334,13 +337,19 @@ class _LoginState extends State<Login> {
                                         children: const <Widget>[
                                           Text('¿Aún no tienes una cuenta?'),
                                         ]),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: <Widget>[
                                         const Text('Registrate'),
-                                        TextButton(
-                                          onPressed: () {
+                                        const SizedBox(
+                                          width: 5,
+                                        ),
+                                        InkWell(
+                                          onTap: () {
                                             Navigator.of(context)
                                                 .popAndPushNamed('/registro');
                                           },
@@ -367,7 +376,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Positioned(
-                  top: 10,
+                  top: 20,
                   child: Container(
                     width: 120,
                     height: 120,

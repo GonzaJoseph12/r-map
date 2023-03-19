@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:r_map/src/components/drawer.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -53,7 +54,7 @@ class _EstablishmentState extends State<Establishment> {
                   height: 20,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -62,7 +63,7 @@ class _EstablishmentState extends State<Establishment> {
                           IconButton(
                             onPressed: () {
                               Navigator.of(context)
-                                  .popAndPushNamed('/bienvenida');
+                                  .popAndPushNamed('/irdashboard');
                             },
                             icon: Icon(Icons.arrow_back),
                           ),
@@ -85,16 +86,24 @@ class _EstablishmentState extends State<Establishment> {
                 //PRIMERA FILA
                 //FILA MONEDA
                 Container(
-                  margin: EdgeInsets.only(right: 50),
+                  margin: const EdgeInsets.only(right: 50),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
+                    children: const <Widget>[
                       SizedBox(width: 10),
                       Icon(
-                        Icons.shield_rounded,
-                        color: Colors.yellow,
+                        CupertinoIcons.checkmark_shield_fill,
+                        color: Color.fromRGBO(202, 171, 9, 1),
+                        size: 18,
                       ),
-                      Text('500'),
+                      SizedBox(
+                        width: 7,
+                      ),
+                      Text(
+                        '100',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                      ),
                     ],
                   ),
                 ),
@@ -189,6 +198,64 @@ class _EstablishmentState extends State<Establishment> {
                   height: 10,
                 ),
 
+
+                //DESPLAZ
+//    SingleChildScrollView(
+//   child: Padding(
+//     padding: EdgeInsets.symmetric(horizontal: 35.0,vertical: 0),
+//     child: SizedBox(
+//       height: 150, // Ajusta la altura máxima de la sección de tarjetas
+//       child: ListView.builder(
+//         itemCount: 5,
+//         itemBuilder: (BuildContext context, int index) {
+//           return Card(
+//             elevation: 2,
+//             child: Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Row(
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 children: [
+//                   Container(
+//                     padding: EdgeInsets.all(4.0),
+//                     child: Icon(
+//                       Icons.location_on,
+//                       size: 25.0,
+//                       color: const Color.fromRGBO(197, 223, 161, 1),
+//                     ),
+//                   ),
+//                   SizedBox(width: 3.0),
+//                   Expanded(
+//                     child: Column(
+//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       children: [
+//                         Text(
+//                           "Nombre del establecimiento",
+//                           style: TextStyle(
+//                             fontSize: 17.0,
+//                             fontWeight: FontWeight.bold,
+//                             color: const Color.fromRGBO(58, 90, 13, 1),
+//                           ),
+//                         ),
+//                         SizedBox(height: 3.0),
+//                         Text(
+//                           "Dirección del lugar",
+//                           style: TextStyle(
+//                             fontSize: 13.0,
+//                             color: Colors.grey[700],
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           );
+//         },
+//       ),
+//     ),
+//   ),
+// ),
                 SingleChildScrollView(
                   child: Padding(
                     padding:
